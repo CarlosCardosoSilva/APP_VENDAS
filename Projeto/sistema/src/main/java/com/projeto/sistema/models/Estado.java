@@ -11,12 +11,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="estado")
 public class Estado implements Serializable{
-	private static final long serailVerionUID = 1L;
+	private static final long serailVerionUID = 1L;//Geração de ID automático
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)//Geração de ID automático
 	private Long id; 
 	private String nome;
 	private String sigla;
+	
 	public Long getId() {
 		return id;
 	}
