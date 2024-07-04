@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	 <meta charset="utf-8">
+	<body>
+		<table>
+			<thead>
+				<tr>ID</tr>
+				<tr>Nome</tr>
+				<tr>Sigla</tr>
+				<tr>Ação</tr>
+				<tr></tr>
+			</thead>
+			<tbody th:each="estado: ${listarEstado}">
+				<tr>
+					<td th:text="${estado.id}"></td>
+					<td th:text="${estado.nome}"></td>
+					<td th:text="${estado.sigla}"></td>
+					<td colspan="2">
+						<a th:href="@{/editarEstado/{id}(id=${estado.id})}">Editar</a>
+						<a th:href="@{/removerEstado/{id}(id=${estado.id})}">Remover</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</head>
+
+</html>
